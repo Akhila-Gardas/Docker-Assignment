@@ -1,14 +1,14 @@
 version: '3.8'
 
 services:
-  # Sets up our Express Web UI Container box
+  
   frontend-service:
     build: ./frontend
     ports:
       - "3000:3000"
-
-  # Sets up our Flask Application API Container box
-  backend-service:
-    build: ./backend
-    ports:
-      - "5000:5000"
+    environment:
+      - BACKEND_URL=http://3.110.48.166:5000
+  # backend-service:
+  # build: ./backend
+  # ports:
+  #  - "5000:5000"
